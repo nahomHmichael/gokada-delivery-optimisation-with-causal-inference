@@ -18,17 +18,14 @@ class Helper:
         return (df.describe().T.style.bar(subset=['mean'], color='#205ff2').background_gradient(subset=['std'],
                                                                                                 cmap='Reds').background_gradient(subset=['50%'], cmap='coolwarm'))
   
-    def percent_missing(self,df):
+    def percent_missing(self, df):
 
         total_cells = m.prod(df.shape)
         missing_count = df.isnull().sum()
         total_missing = missing_count.sum()
         print("Total Percentage of Missing values: " +
                 f"{round(((total_missing/total_cells)*100))}" +"% ")
+        
 
-  
-  
-    # def check_outlier(self, df, )
-    
     
     
