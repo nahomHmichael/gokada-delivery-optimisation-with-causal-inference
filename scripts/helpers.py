@@ -12,7 +12,7 @@ class Helper:
     summary: helper class for EDA
     """
     def __init__(self) -> None:
-        pass
+        self.ng_holidays = holidays.country_holidays('NG')
     
     def get_df_info(self, df):
         
@@ -30,14 +30,21 @@ class Helper:
                 f"{round(((total_missing/total_cells)*100))}" +"% ")
         
     def is_holiday(self,Date):
-        ng_holidays = holidays.country_holidays('NG')
+        # ng_holidays = holidays.country_holidays('NG')
         try:
             dt = datetime.strptime(Date, '%Y-%m-%d %H:%M:%S').date()
-            if dt in ng_holidays:
+            if dt in self.ng_holidays:
                 return 1
-            else: return 0
+            else: 
+                return 0
         except Exception as e:
              return 0
+    def isWeekend(self, Date):
+        dt = datetime.strptime(Date, '%Y-%m-%d %H:%M:%S')
+        if dt.weekday() < 5:
+            return 0
+        else:  
+            return 1
 
     
     
