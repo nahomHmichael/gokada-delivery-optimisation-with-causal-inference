@@ -2,6 +2,7 @@
 <p align="center">
      <img src="img/img.png">
 </p>
+
 ## Overview
 Our client for this project is a delivery company. The company works in partnered with motorbike owners and drivers to deliver parcels across Lagos, Nigeria. This company has an issue of high number of unfulfilled delivery requests. The cause of this problem is the sub-optimal placement of pilots and clients who wants to sent their parcel.
 
